@@ -1,0 +1,77 @@
+Unix Commands
+================
+
+Shell vs Terminal
+Terminal is used to execute unix commands it is mostly a window where we execute the commands
+Group of unix commands is know as shellscript
+
+Shell vs Kernal
+Shell is an interface between user and kernal which send/translates commands to kernal. 
+Kernal executes commands
+
+All commands should be in lower case
+
+man ls
+manual which will show the details about the command.
+
+clear
+to clear the screen
+
+who am i
+show the user name
+
+pwd 
+present working directory
+
+cal
+shows the calender of present/current month
+
+cal month year
+shows the calender of the mentioned month year
+eg: cal 7 2020
+eg: cal feb 2020
+
+date
+shows the current date and time
+
+mkdir
+to create a directory
+eg: mkdir test
+a directory will be created in the present working directory
+
+ls -lrt
+drwxr-xr-x 2 user user 2 Sep  5 15:24  test
+here d means directory
+
+ls -l
+will shows all files and folder in current directory
+
+ls directoryname
+will show all files and folder in the particular directory
+
+cd directoryname
+will change the directory
+
+cd ..
+will go to parent directory
+
+cd /
+will take to root directory (first directory)
+
+cd ~
+will take to home directory
+
+touch filename
+an empty file is created
+
+touch file1 file2 file3
+multiple empty file is created
+
+history
+all commands typed in terminal is displayed
+
+
+
+
+
+
