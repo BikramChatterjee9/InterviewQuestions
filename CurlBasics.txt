@@ -1,0 +1,86 @@
+Curl Options--
+The advantage of CURL is its tool independent, we dont need to install any tool specifically. 
+
+curl [options] [URL...]
+
+Here are the options that we’ll use when making requests:
+
+-X, --request - The HTTP method to be used.
+-i, --include - Include the response headers.
+-d, --data - The data to be sent. (payload)
+-H, --header - Additional header to be sent.
+-u, --user to send username password, if its a basic authentication
+other authentications can be passed as headers
+-o,		output option to save to a file:
+-v, --verbose : the opposite of --silent gives more details about the request and response
+-s, --silent : silent or quiet mode
+
+HEAD requests
+
+curl -I https://www.bookmarks.dev/api/public/bookmarks
+curl -i -X HEAD https://www.bookmarks.dev/api/public/bookmarks
+
+curl -I https://jsonplaceholder.typicode.com/posts
+
+HTTP GET
+
+The GET method requests a specific resource from the server.
+
+GET is the default method when making HTTP requests with curl. 
+Executing curl with no parameters on a URL (resource) will execute a GET.
+Here is an example of making a GET request to the JSONPlaceholder API to a JSON representation of all posts:
+
+curl https://jsonplaceholder.typicode.com/posts
+
+curl https://www.bookmarks.dev/api/version
+
+curl -X GET "https://www.bookmarks.dev/api/version" -H "accept: application/json"
+
+If you don’t want the progress meter (first part) shown, you can silent curl:
+
+$ curl https://www.bookmarks.dev/api/version -s
+{"version":"13.0.0","gitSha1":"1469201f6b6d56408ff98418842d4a933402cd93"}
+
+
+To filter the results use query params:
+
+curl https://jsonplaceholder.typicode.com/posts?userId=1
+(Parameters must be passed in the URL itself)
+
+HTTP POST
+The POST method is used to create a resource on the server. If the resource exists, it is overridden.
+
+The following command makes a POST request using the data specified with the -d option:
+
+curl -X POST -d "userId=5&title=Hello World&body=Post body." https://jsonplaceholder.typicode.com/posts
+
+The type of the request body is specified using the Content-Type header. 
+By default when this header is not given curl uses Content-Type: application/x-www-form-urlencoded.
+
+To send a JSON formatted data set the body type to application/json:
+
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"userId": 5, "title": "Hello World", "body": "Post body."}' \
+    https://jsonplaceholder.typicode.com/posts
+
+curl -X POST -H "Content-Type: application/json" -d '{"userId": 5, "title": "Hello World", "body": "Post body."}'  https://jsonplaceholder.typicode.com/posts
+
+
+HTTP PUT
+The PUT method is used to update or replace a resource on the server. It replaces all data of the specified resource with the request data.
+
+curl -X PUT -d "userId=5&title=Hello World&body=Post body." https://jsonplaceholder.typicode.com/posts/5
+HTTP PATCH
+The PUT method is used to make partial updates to the resource on the server.
+
+curl -X PUT -d "title=Hello Universe" https://jsonplaceholder.typicode.com/posts/5
+HTTP DELETE
+The DELETE method removes the specified resource from the server.
+
+curl -X DELETE https://jsonplaceholder.typicode.com/posts/5
+Authentication
+If the API endpoint requires authentication, you’ll need to obtain an access key. Otherwise, the API server will respond with the “Access Forbidden” or “Unauthorized” response message.
+
+The process of obtaining an access key depends on the API you’re using. Once you have your access token you can send it in the header:
+
+curl -X GET -H "Authorization: Bearer {ACCESS_TOKEN}" "https://api.server.io/posts"

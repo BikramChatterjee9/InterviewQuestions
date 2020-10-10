@@ -70,6 +70,62 @@ multiple empty file is created
 history
 all commands typed in terminal is displayed
 
+cat filename
+to check the content of a file
+if file is not present it will throw an error
+
+cat > test
+it is used to create a file 
+it will wait for user to type the content
+to come out with save press CTRL+D
+
+cat < test is same as cat test
+
+cat < test > abc
+it will copy the content of test file to abc
+
+cat < test > test123
+if the new file doesnot exist it will create a new file
+
+cat test test123 >newtest
+to write content of 2 files in a single file
+
+cat <newtest
+to append the content
+
+less filename
+to read one page at a time and it will be in a navigable format
+
+to search in the file type '/' followed by the letter to search
+
+head filename
+shows the first 10 lines
+
+tail filename
+shows the last 10 lines
+
+to read the specific number of lines
+head n filename
+n denotes the no of lines
+
+
+to read the specific number of lines
+tail n filename
+n denotes the no of lines
+
+tail -f filename (mostly used)
+if new lines are added at the bottom it will keep on showing
+f is know as followed
+
+more filename
+will display page by page
+
+
+
+
+
+
+
 
 
 
