@@ -1,0 +1,19 @@
+how do u automate api if it is not ready in dev
+-- will do as mocking or stubbing
+401 vs 403
+what status code will you get after successfull post and put
+-- post 201 put 200 (depend on the developer)
+sorting of response body
+Difference bw header content/type and accept
+How do u validate if a resource is created using post 
+Challenges of api testing
+-since there is no UI validation of response is a challenge
+-setting up of correct test data 
+-performing serelization and deserilization
+-understand the api flow(end to end flow) -- i.e for any scenerio understanding which all componenents will get affected
+How do u test microservices
+How will u perform api channing
+API testing can be considered as a graybox testing
+What is your api framework 
+--Hybrid structure combination of datadriven, serelization deserelization, testng
+
